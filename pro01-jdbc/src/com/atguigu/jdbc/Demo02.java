@@ -13,7 +13,7 @@ public class Demo02 {
         //url 表示 和 数据库通信的地址
         //如果url中需要带参数，则需要使用?进行连接
         //如果需要带多个参数，则从第二个参数开始使用&连接
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8","root","123456");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC","root","root");
         //3.编写SQL语句
         //id , fname , price , fcount , remark
         String sql = "insert into t_fruit values(0,?,?,?,?)";

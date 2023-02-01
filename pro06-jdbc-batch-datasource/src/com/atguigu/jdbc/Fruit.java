@@ -1,9 +1,5 @@
 package com.atguigu.jdbc;
 
-/*
-* get/set方法以及其他的快捷键：Alt + Shift + s；
-*
-* */
 public class Fruit {
     private Integer fid ;
     private String fname ;

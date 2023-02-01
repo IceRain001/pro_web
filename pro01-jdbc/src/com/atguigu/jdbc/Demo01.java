@@ -9,7 +9,7 @@ public class Demo01 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         //1.添加jar
         //2.加载驱动
-        //org.gjt.mm.mysql.Driver
+        //org.gjt.mm.mysql.Driver(此项目引入的jar包不包含该内容) 或者com.mysql.jdbc.Driver均可
         Class.forName("com.mysql.jdbc.Driver");
         //3.通过驱动管理器获取连接对象
         //3-1.准备URL

@@ -2,12 +2,12 @@ package com.atguigu.jdbc;
 
 import java.sql.*;
 
-//JDBC - 查询指定fid的库存记录
+//JDBC - 查询指定fid的库存记录 --查询表中记录条数
 public class Demo07 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("org.gjt.mm.mysql.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         //url ->    jdbc:mysql://ip:port/dbname?参数列表
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC","root","root");
         //3.编写SQL语句
         String sql = "select count(*) from t_fruit" ;
         //4.创建预处理命令对象

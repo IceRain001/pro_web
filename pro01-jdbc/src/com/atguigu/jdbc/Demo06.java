@@ -7,9 +7,9 @@ import java.util.List;
 //JDBC - 查询指定fid的库存记录
 public class Demo06 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("org.gjt.mm.mysql.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         //url ->    jdbc:mysql://ip:port/dbname?参数列表
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC","root","root");
         //3.编写SQL语句
         String sql = "select * from t_fruit where fid = ? " ;
         //4.创建预处理命令对象

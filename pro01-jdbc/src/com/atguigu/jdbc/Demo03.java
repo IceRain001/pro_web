@@ -10,8 +10,8 @@ public class Demo03 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Fruit fruit = new Fruit(33,"猕猴桃","猕猴桃是水果之王");
 
-        Class.forName("org.gjt.mm.mysql.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC","root","root");
         String sql = "update t_fruit set fname = ? , remark = ? where fid = ? " ;
         PreparedStatement psmt = conn.prepareStatement(sql);
         psmt.setString(1,fruit.getFname());

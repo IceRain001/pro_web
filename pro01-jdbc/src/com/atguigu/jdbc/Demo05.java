@@ -7,8 +7,8 @@ import java.util.List;
 //JDBC - 查询所有的库存
 public class Demo05 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("org.gjt.mm.mysql.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruitdb?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC","root","root");
         //3.编写SQL语句
         String sql = "select * from t_fruit" ;
         //4.创建预处理命令对象
@@ -28,6 +28,7 @@ public class Demo05 {
             int fcount = rs.getInt(4);
             String remark = rs.getString(5);
 
+            //将信息封装进新对象中
             Fruit fruit = new Fruit(fid , fname , price , fcount , remark );
             fruitList.add(fruit);
         }
@@ -35,7 +36,7 @@ public class Demo05 {
         rs.close();
         psmt.close();
         conn.close();
-
+        //steam流的使用：list用法均类似于此
         fruitList.forEach(System.out::println);
     }
 }
